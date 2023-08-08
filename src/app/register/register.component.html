@@ -1,0 +1,153 @@
+<section style="background-image: url('https://th.bing.com/th/id/OIP.GbMboU-krQvdIrfKgWpzXgHaFj?pid=ImgDet&rs=1');background-size: cover;" class="bg-light p-5 text-light">
+  <form [formGroup]="registerForm" (ngSubmit)="register()">
+    <div class="row g-0">
+      <div class="col text-center p-2 mb-3"> 
+          
+        <span class="fs-2 text-dark">
+          <img width="40px" src="https://th.bing.com/th/id/R.9d8c5fd3637be0b2f38ea8076d75add7?rik=0mR4uyBkLpy3Rw&riu=http%3a%2f%2fcdn.onlinewebfonts.com%2fsvg%2fimg_349207.png&ehk=T12PxUIM9sLJG9ALKLsp5uV0rF5wLkS%2bATMxJwQ%2b9pE%3d&risl=&pid=ImgRaw&r=0" alt="">
+          Registration Form</span>
+      </div >
+    </div>
+  
+    <div class="row">
+      <div class="col">
+        <label for="firstName" class="form-label">First Name</label>
+        <input name="firstname" formControlName="firstname" placeholder="Enter Your firstname" type="text" class="form-control">
+  
+      </div>
+      <!-- firstname error msg -->
+      <div *ngIf="this.registerForm.get('firstname')?.errors&&this.registerForm.get('firstname')?.touched" class="text-danger mb-3">
+        Invalid Name
+
+      </div>
+      <div class="col mb-3">
+        <label for="lastname" class="form-label">Last Name</label>
+        <input name="lastname" formControlName="lastname" placeholder="Enter Your lastname" type="text" class="form-control">
+  
+  
+  
+      </div>
+      <!-- username error msg -->
+      <div *ngIf="this.registerForm.get('lastname')?.errors&&this.registerForm.get('lastname')?.touched" class="text-danger mb-3">
+        Invalid Name
+
+      </div>
+  
+    </div>
+  
+    <div class="row">
+      <div class="col mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input name="email" placeholder="Email" type="email" class="form-control" formControlName="email">
+        <div class="form-text"></div>
+  
+      </div>
+      <!-- email error msg -->
+      <div *ngIf="this.registerForm.get('email')?.errors&&this.registerForm.get('email')?.touched" class="text-danger mb-3">
+        Invalid email address
+
+      </div>
+      
+    </div>
+    <div class="row">
+      <div class="col mb-3">
+        <label for="mobile" class="form-label">Phone Number</label>
+        <input name="mobile" placeholder="Enter Your mobile Number" type="text" class="form-control" id="mobile" formControlName="mobile">
+        <div class="form-text"></div>
+  
+      </div>
+      <!-- username error msg -->
+      <div *ngIf="this.registerForm.get('mobile')?.errors&&this.registerForm.get('mobile')?.touched" class="text-danger mb-3">
+        Invalid mobile Number
+
+      </div>
+
+      <div class="col mb-3">
+        
+        <label for="DOB" class="form-label">Birth Date</label>
+        <input name="dob" class="form-control" formControlName="dob" type="date" placeholder="Enter birth date"/>
+        
+      </div>
+      <!-- username error msg -->
+      <div *ngIf="this.registerForm.get('dob')?.errors&&this.registerForm.get('dob')?.touched" class="text-danger mb-3">
+        please enter your DOB
+
+      </div>
+  
+      
+      
+    </div>
+
+    <div class="row">
+      <div class="col ps-3">
+        <div class="m-1">Gender</div>
+        <div class="form-check form-check-inline">
+          <input name="gender" type="radio" class="form-check-input" value="male"  formControlName="gender">
+          <label for="male" class="form-check-label">male</label>
+        </div >
+        <div class="form-check form-check-inline">
+          <input name="gender" type="radio" class="form-check-input" value="female" formControlName="gender">
+          <label for="female" class="form-check-label">Female</label>
+        </div >
+        <div class="form-check form-check-inline">
+          <input name="gender" type="radio" class="form-check-input" value="others"  formControlName="gender">
+          <label for="others" class="form-check-label">Others</label>
+        </div >
+        
+  
+      </div>
+  
+      
+    </div >
+
+     <!-- username error msg -->
+     <div *ngIf="this.registerForm.get('gender')?.errors&&this.registerForm.get('gender')?.touched" class="text-danger mb-3">
+      Gender is required
+
+    </div>
+
+    <div class="row">
+      <div class="col mb-3">
+        <label for="add" class="form-label">Address</label>
+        <input name="address" type="text" placeholder="Enter your address" class="form-control" id="add" formControlName="address">
+        <div class="form-text"></div>
+  
+      </div>
+      <!-- username error msg -->
+      <div *ngIf="this.registerForm.get('address')?.errors&&this.registerForm.get('address')?.touched" class="text-danger mb-3">
+        please enter your address
+
+      </div>
+      
+    </div>
+
+
+    <div class="row ">
+      <div class="col mb-3">
+        <label for="">Course</label>
+          <select name="course" formControlName="course" class="form-control">
+              <option disabled>Select a course</option>
+              <option>Biology Science</option>
+              <option>Computer Science</option>
+              <option>Commerce</option>
+              <option>Humanities</option>
+          </select>
+      </div >
+        <!-- username error msg -->
+      <div *ngIf="this.registerForm.get('course')?.errors&&this.registerForm.get('course')?.touched" class="text-danger mb-3">
+        please enter your course
+
+      </div>
+        
+
+    </div>
+
+    <div class="row mb-3">
+      <div class="col-md-12 d-flex flex-row justify-content-center align-items-center mt-3">
+        <button  class="btn btn-primary btn-lg ms-4" type="submit">Register</button>
+        <button class="btn btn-primary btn-lg ms-2 " type="submit">Cancel</button>
+      </div>
+    </div>
+  
+  </form>
+</section>
